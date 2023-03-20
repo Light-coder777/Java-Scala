@@ -1,0 +1,158 @@
+abstract class Bike{  
+    def run()  
+}  
+  
+class Hero extends Bike{  
+    def run(){  
+        println("running fine...")  
+    }  
+}  
+  
+object Main{  
+    def main(args: Array[String]){  
+        var h = new Hero()  
+        h.run()  
+    }  
+}
+
+
+
+
+abstract class Bike(a:Int){             // Creating constructor  
+    var b:Int = 20                      // Creating variables  
+    var c:Int = 25  
+    def run()                           // Abstract method  
+    def performance(){                  // Non-abstract method  
+        println("Performance awesome")  
+    }  
+}   
+class Hero(a:Int) extends Bike(a){  
+    c = 30  
+    def run(){  
+        println("Running fine...")  
+        println("a = "+a)  
+        println("b = "+b)  
+        println("c = "+c)  
+    }  
+}  
+object Main{  
+    def main(args: Array[String]){  
+        var h = new Hero(10)  
+        h.run()  
+        h.performance()  
+    }  
+}  
+
+
+
+// will show error
+
+abstract class Bike{  
+    def run()               // Abstract method  
+}  
+  
+class Hero extends Bike{        // Not implemented in this class  
+    def runHero(){  
+        println("Running fine...")  
+    }  
+}  
+  
+object Main{  
+    def main(args: Array[String]){  
+        var h = new Hero()  
+        h.runHero()  
+    }  
+}  
+
+
+
+
+
+trait Printable {  
+    def print ()  
+}  
+class A4 extends Printable{  
+    def print(){  
+        println("Hello")  
+    }  
+}  
+  object Main{  
+    def main(args:Array[String]){  
+        var a = new A4()  
+        a.print()  
+    }  	
+}  
+
+
+
+
+
+ 
+trait Printable{  
+    def print()  
+}  
+  
+abstract class A4 extends Printable{           // Must declared as abstract class  
+   def printA4(){  
+       println("Hello, this is A4 Sheet")  
+   }  
+}  
+class A5 extends A4{  
+    def print(){  
+        println("Hello")  
+    }  
+}  
+  object Main{  
+    def main(args:Array[String]){  
+        var a = new A5()  
+        a.print()  
+      a.printA4()
+    }  	
+}  
+
+
+
+trait Printable{  
+    def print()  
+}  
+trait Showable{  
+   def show()  
+}  
+  
+class A6 extends Printable with Showable{  
+    def print(){  
+        println("This is printable")  
+    }  
+    def show(){  
+        println("This is showable");  
+    }  
+}  
+
+  object Main{  
+    def main(args:Array[String]){  
+        var a = new A6()  
+        a.print()  
+      a.show()
+    }  	
+}  
+
+trait Printable{  
+    def print()         // Abstract method  
+    def show(){         // Non-abstract method  
+        println("This is show method")  
+    }  
+}  
+class A6 extends Printable{  
+    def print(){  
+        println("This is print method")  
+    }  
+}  
+object Main{  
+    def main(args:Array[String]){  
+        var a = new A6()  
+        a.print()  
+        a.show()  
+    }  
+}  
+
+
